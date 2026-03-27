@@ -14,9 +14,9 @@ Fecha: 2026-03-26.
 */
 
 //Inclusión de librerías
-#include <stdio.h>   //Librería estándar de entrada y salida
-#include <conio.h>  //Librería para usar getch() y presentar de mejor manera el archivo ejecutable .exe
-#include <string.h> //Librería para manejar cadenas
+#include <stdio.h> 
+#include <conio.h>
+#include <string.h>
 
 //Procedimiento que muestra el menú de opciones del programa.
 void mostrarMenu();
