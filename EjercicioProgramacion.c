@@ -6,7 +6,7 @@ Ejercicio de Programación Cooperativo
 Autores: 
     David Cañizares 
     Sebastián Orbe
-    Derek Yánez.
+    Derek Yépez.
 Fecha: 2026-03-26.
 
 ========= GESTIÓN DE VENTAS DE UN PRODUCTO =======
