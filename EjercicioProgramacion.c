@@ -23,10 +23,12 @@ void mostrarMenu();
 
 int main(){
     int auxiliarProd = 0; //Se usa para validar las opciones del menú de la 2 a la 6.
-    int opcion, id, stock=0, cantidadVender=0, reabastecimiento, ventasTotales=0;
+    int opcion, stock=0, cantidadVender=0, reabastecimiento, ventasTotales=0;
     float precio, ganancia=0;
     char nombre[20]; //Se declara un arreglo de caracteres (cadena) con 20 índices (19 espacios para letras), para
                      //asegurar que todas las letras entren dentro de la cadena.
+    char id[20]; //Se declara y crea una variable que almacene el ID. Puesto que este puede ser alfanumérico, se declara
+                 //como cadena.
 
     do{ //Se crea un lazo "do-While" para mostrar el menú y las opciones mientras se cumpla una condición dada.
         mostrarMenu(); //Se invoca a la función que muestra el menú.
@@ -42,10 +44,11 @@ int main(){
                 auxiliarProd = 1; //Se cambia el valor a 1 para "decir" que existe ya un producto registrado.
                 printf("==== DATOS DEL PRODUCTO ====\n");
                 printf("ID: ");
-                scanf("%d", &id);
+                scanf("%s", id);
 
                 printf("Nombre: ");
                 scanf("%s", nombre);
+
 
                 printf("Cantidad en Stock: ");
                 scanf("%d", &stock);
@@ -111,7 +114,7 @@ int main(){
                 if(auxiliarProd == 1){
                     printf("\n====== %s ======\n", nombre); //Se imprime el nombre del producto.
                     //Se imprimen sus características actualziadas.
-                    printf("ID: %d\n", id);
+                    printf("ID: %s\n", id);
                     printf("Nombre: %s\n", nombre);
                     printf("Stock: %d\n", stock);
                     printf("Precio Unitario: $%.2f\n", precio);
