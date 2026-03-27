@@ -42,6 +42,7 @@ int main(){
         switch(opcion){
             case 1: //Registra los datos del producto.
                 auxiliarProd = 1; //Se cambia el valor a 1 para "decir" que existe ya un producto registrado.
+                ventasTotales = 0; //Se asigna 0 para que se reinicie dicha cantidad en caso de querer sustituir el producto.
                 printf("==== DATOS DEL PRODUCTO ====\n");
 
                 printf("ID: "); //Se pide ingreso del ID.
@@ -69,10 +70,10 @@ int main(){
             case 2: //Vender unidades de producto.
                 if(auxiliarProd == 1){ //Se valida que primero se registren los datos del producto para realizar la acción.
                     printf("\n==== VENTA DE PRODUCTO ====\n");
-                    printf("Ingrese la cantidad a vender: ");
+                    printf("Ingrese la cantidad a vender: "); //Se pide la cantidad a vender del producto.
                     scanf("%d", &cantidadVender);
 
-                    while(cantidadVender <= 0){ //Se valida que la cantidad a vender no sea negativa.
+                    while(cantidadVender <= 0){ //Se valida que la cantidad a vender no sea negativa. Y se vuelve a pedir la cantidad.
                         printf("Dato nulo o negativo. Vuelva a ingresar.\n");
                         printf("Ingrese la cantidad a vender: ");
                         scanf("%d", &cantidadVender);
@@ -95,10 +96,10 @@ int main(){
             case 3: //Reabastecer producto.
                 if(auxiliarProd == 1){
                     printf("\n==== REABASTECER PRODUCTO ====\n");
-                    printf("Ingrese la cantidad a agregar al stock: ");
+                    printf("Ingrese la cantidad a agregar al stock: "); //Se pide la cantidad a agregar al stock.
                     scanf("%d", &reabastecimiento);
 
-                    while(reabastecimiento <= 0){ //Se valida que el dato ingresado no sea negativo o 0.
+                    while(reabastecimiento <= 0){ //Se valida que el dato ingresado no sea negativo o 0. Y se vuelve a pedir el dato.
                         printf("Dato nulo o invalido. Ingrese un valor positivo.\n");
                         printf("Ingrese la cantidad a agregar al stock: ");
                         scanf("%d", &reabastecimiento);
@@ -119,7 +120,7 @@ int main(){
                     printf("Nombre: %s\n", nombre);
                     printf("Stock: %d\n", stock);
                     printf("Precio Unitario: $%.2f\n", precio);
-                    printf("Cantidad Vendida: %d", ventasTotales);
+                    printf("Cantidad Vendida: %d", ventasTotales); //Adcicionalmente se muestra la cantidad vendida de producto,
 
                 } else {
                     printf("\nNo existe producto para realizar esta accion.\n");
@@ -129,7 +130,7 @@ int main(){
                 if(auxiliarProd == 1){
                     ganancia = ventasTotales*precio; //Se multiplica las ventas totales por el precio unitario.
                     printf("\n==== GANANCIAS OBTENIDAS ====\n");
-                    printf("Ventas Totales: %d\n", ventasTotales);
+                    printf("Ventas Totales: %d\n", ventasTotales); //Se muestra adicionalmente las ventas.
                     printf("Ganancia Total: $%.2f\n", ganancia);
                 } else {
                     printf("\nNo existe producto para realizar esta accion.\n");
