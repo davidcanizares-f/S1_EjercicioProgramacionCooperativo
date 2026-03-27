@@ -43,16 +43,17 @@ int main(){
             case 1: //Registra los datos del producto.
                 auxiliarProd = 1; //Se cambia el valor a 1 para "decir" que existe ya un producto registrado.
                 printf("==== DATOS DEL PRODUCTO ====\n");
-                printf("ID: ");
+
+                printf("ID: "); //Se pide ingreso del ID.
                 scanf("%s", id);
 
-                printf("Nombre: ");
+                printf("Nombre: "); //Se pide ingreso del nombre del producto.
                 scanf("%s", nombre);
 
 
-                printf("Cantidad en Stock: ");
+                printf("Stock: "); //se pide ingreso del stock
                 scanf("%d", &stock);
-                while(stock < 0){
+                while(stock < 0){//Se valida que el stock no sea menor que 0 (negativo)
                     printf("Dato invalido. Ingrese un numero positivo: ");
                     scanf("%d", &stock);
                 }
@@ -77,7 +78,7 @@ int main(){
                         scanf("%d", &cantidadVender);
                     }
 
-                    if(cantidadVender > stock){ //Se valida que exista suficiente stock para realizar la venta.
+                    if(cantidadVender > stock || stock == 0){ //Se valida que exista suficiente stock para realizar la venta.
                         printf("No existe suficiente stock para realizar la venta.\n");
                         printf("Stock actual: %d\n", stock);
                     } else { //En el caso de que el stock sea mayor a la venta, se venden dichas unidades y se disminuye el stock.
