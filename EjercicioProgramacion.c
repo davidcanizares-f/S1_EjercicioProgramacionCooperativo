@@ -143,9 +143,11 @@ int main(){
         }
     }while(opcion!=6); //mientras la opción sea diferente de 6, el bucle se seguirpa repitiendo.
     
-    return 0;
     getch(); //obtiene un dato aleatorio para cerrar el ejecutable cuando esto se realize, y así poder visualizar todo
              //el programa.
+
+    return 0;
+     
 }
 
 //////////////////
