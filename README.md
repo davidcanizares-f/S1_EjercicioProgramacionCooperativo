@@ -29,9 +29,9 @@ Un comerciante necesita una herramienta digital que sustituya el registro manual
 Al iniciar, se presentará el menú de OrbStore:
 
 - **Registrar Datos:** El primer paso obligatorio. Define qué vendes y a cuánto.
-  *Cambiar datos del producto:* Es posible cambiar información eligiendo entre 2 opciones (agregar nuevo producto o cambiar un aspecto específico).
+- *Cambiar datos del producto:* Es posible cambiar información eligiendo entre 2 opciones (agregar nuevo producto o cambiar un aspecto específico).
 - **Vender Unidades:** Resta unidades del stock y suma a las ganancias.
-  *Agregar un descuento:* Es posible agregar un descuento en cada compra.
+- *Agregar un descuento:* Es posible agregar un descuento en cada compra.
 - **Reabastecer:** Incrementa el stock disponible.
 - **Consultar Información:** Muestra el estado actual del producto (ID, Nombre, Stock, Precio y Ventas).
 - **Mostrar Ganancias:** Reporte financiero rápido.
