@@ -23,8 +23,8 @@ void mostrarMenu();
 
 int main(){
     int auxiliarProd = 0; //Se usa para validar las opciones del menú de la 2 a la 6.
-    int opcion, stock=0, cantidadVender=0, reabastecimiento, ventasTotales=0;
-    float precio, ganancia=0;
+    int opcion, stock=0, cantidadVender=0, reabastecimiento, ventasTotales=0, descuento, desc=0;
+    float precio, ganancia=0, pcondes, valordescuento=0;
     char nombre[20]; //Se declara un arreglo de caracteres (cadena) con 20 índices (19 espacios para letras), para
                      //asegurar que todas las letras entren dentro de la cadena.
     char id[20]; //Se declara y crea una variable que almacene el ID. Puesto que este puede ser alfanumérico, se declara
@@ -83,6 +83,24 @@ int main(){
                         printf("No existe suficiente stock para realizar la venta.\n");
                         printf("Stock actual: %d\n", stock);
                     } else { //En el caso de que el stock sea mayor a la venta, se venden dichas unidades y se disminuye el stock.
+
+                            printf("Desea añadir un descuento a la compra: 1.Si o 0.No\n");
+                            printf("Ingrese una opción: ");
+                            scanf("%i", &descuento);
+                        while(descuento>1 || descuento<0){
+                            printf("Dato invalido. Vuelva a ingresar una opcion: 1.Si o 0.No\n");
+                            printf("Ingrese una opción: ");
+                            scanf("%i", &descuento);
+                            }                        
+                        if(descuento==1)
+                        {
+                            printf("Ingrese el valor del descuento:\n");
+                            printf("Descuento: ");
+                            scanf("%f", &valordescuento);
+                            pcondes=precio-(precio*(valordescuento/100));
+                            desc++;
+                        }
+                            
                         printf("%d UNIDADES DE %s VENDIDAS!\n", cantidadVender, nombre);
                         stock -= cantidadVender;
                         ventasTotales += cantidadVender; //Se acumula la cantidad de ventas realizadas para calcular las totales.
@@ -128,10 +146,19 @@ int main(){
                 break;
             case 5: //Calcular y mostrar las ganancias obtenidas.
                 if(auxiliarProd == 1){
-                    ganancia = ventasTotales*precio; //Se multiplica las ventas totales por el precio unitario.
-                    printf("\n==== GANANCIAS OBTENIDAS ====\n");
-                    printf("Ventas Totales: %d\n", ventasTotales); //Se muestra adicionalmente las ventas.
-                    printf("Ganancia Total: $%.2f\n", ganancia);
+                        if (desc==1)
+                        {
+                                ganancia = ventasTotales*pcondes; //Se multiplica las ventas totales por el precio unitario.
+                                printf("\n==== GANANCIAS OBTENIDAS ====\n");
+                                printf("Ventas Totales: %d\n", ventasTotales); //Se muestra adicionalmente las ventas.
+                                printf("Ganancia Total: $%.2f\n", ganancia);
+                                desc=0;
+                        }else {
+                                ganancia = ventasTotales*precio; //Se multiplica las ventas totales por el precio unitario.
+                                printf("\n==== GANANCIAS OBTENIDAS ====\n");
+                                printf("Ventas Totales: %d\n", ventasTotales); //Se muestra adicionalmente las ventas.
+                                printf("Ganancia Total: $%.2f\n", ganancia);
+                        }
                 } else {
                     printf("\nNo existe producto para realizar esta accion.\n");
                 }
