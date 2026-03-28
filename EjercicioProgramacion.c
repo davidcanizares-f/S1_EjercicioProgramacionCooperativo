@@ -184,6 +184,12 @@ int main(){
                         printf("Ingrese el valor del descuento:\n");
                         printf("Descuento: ");
                         scanf("%f", &valorDescuento);
+                        while(valorDescuento < 0){
+                            printf("Dato negativo invalido. Vuelva a ingresar.\n");
+                            printf("Ingrese el valor del descuento:\n");
+                            printf("Descuento: ");
+                            scanf("%f", &valorDescuento);
+                        }
                         pcondes = precio-(precio*(valorDescuento/100));
                         ganancia += (pcondes * cantidadVender);
                     } else {
