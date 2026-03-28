@@ -65,6 +65,17 @@ int main(){
                     printf("Dato nulo o negativo. Vuelva a ingresar el precio: ");
                     scanf("%f", &precio);
                 }
+
+                printf("Desea añadir un descuento, 1.Si o 0.No\n");
+                scanf("%i", &descuento);
+                if(descuento==1)
+                {
+                    printf("Ingrese el valor del descuento en porcentaje:\n");
+                    scanf("%f", &valordescuento);
+                    precio=precio-(precio*(valordescuento/100));
+                    printf("El precio unitario con descuento es: %.2f", precio);
+                }
+
                 break;
 
             case 2: //Vender unidades de producto.
