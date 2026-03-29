@@ -82,9 +82,11 @@ int main(){
                         printf("==== DATOS DEL PRODUCTO ====\n");
 
                         printf("ID: "); 
+                        getchar();
                         fgets(id, 20, stdin);
 
                         printf("Nombre: "); 
+                        getchar();
                         fgets(nombre, 20, stdin);
 
 
@@ -119,11 +121,13 @@ int main(){
                         switch (opcion){
                         case 1:
                             printf("Nombre: "); 
+                            getchar();
                             fgets(nombre, 20, stdin);                            
                             break;
 
                         case 2:
                             printf("ID: "); 
+                            getchar();
                             fgets(id, 20, stdin);
                             break;
 
